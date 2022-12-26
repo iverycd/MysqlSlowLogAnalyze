@@ -87,7 +87,7 @@ class DbLog(object):
         lines = ''.join(list_tmp)
         print(datetime.datetime.now(), "----------------", '读取文件完毕')
         headers_printed = False
-        # print(lines)
+        print(datetime.datetime.now(), "----------------", '正在分析数据，请稍等')
         for match in re.finditer(pat, lines, re.MULTILINE | re.DOTALL):
             if not headers_printed:
                 headers_printed = True

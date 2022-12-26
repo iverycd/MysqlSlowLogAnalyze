@@ -6,13 +6,7 @@
 
 ### 1.1 下载地址
 
-`windows`
-
-
-
-`MacOS`
-
-
+https://github.com/iverycd/MysqlSlowLogAnalyze/releases
 
 ### 1.2 运行概览
 

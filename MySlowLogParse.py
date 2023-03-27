@@ -359,14 +359,19 @@ def main():
     else:
         print("输出结果目录" + destDirName + "已存在")
     ret, out_df = dbLog.read_log_path(path)
+    print(datetime.datetime.now(), "----------------", '正则解析日志完毕！')
     if ret != 0:
         # 生成按执行时间维度统计结果
         sql_result_list = dbLog.query_max_exec_time(out_df)
+        print(datetime.datetime.now(), "----------------",'query_max_exec_time finish')
         # 生成按执行次数分析的统计结果
         sql_result_list2 = dbLog.query_max_exec_count(out_df)
+        print(datetime.datetime.now(), "----------------", 'query_max_exec_count finish')
         # 生成SQL散点图之前获取数据
         sql_result_list3 = dbLog.query_all_data(out_df)
+        print(datetime.datetime.now(), "----------------", 'query_all_data finish')
         dbLog.query_report(out_df, destDirName)
+        print(datetime.datetime.now(), "----------------", 'query_report finish')
         if len(sql_result_list[0]) > 0 and len(sql_result_list2[0]) > 0:
             # 将以上2个结果写入到同一个excel不同的sheet
             print(datetime.datetime.now(), "----------------", '正在生成Excel')
